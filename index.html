@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Una piccola sfida 🧠</title>
+
+<style>
+body {
+    background: #fff0f5;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+}
+
+.box {
+    background: white;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+input {
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 12px 25px;
+    background: #ff8fab;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.indizi {
+    text-align: left;
+    margin-top: 30px;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="box">
+
+<h1>Prima di entrare... </h1>
+
+<p>
+Per aprire il nostro piccolo mondo devi risolvere gli indizi.
+</p>
+
+<div class="indizi">
+
+<p>🌹 <b>Indizio 1:</b><br>
+torna con la memoria al momento in cui tutto é cambiato.</p>
+
+<p>✨ <b>Indizio 2:</b><br>
+il mese in cui hai avuto la fortuna o il corsggio di scegliermi 😽.</p>
+
+<p>💌 <b>Indizio 3:</b><br>
+in quell'istante hai firmato il contratto invisibile per avere me, nessun rimborso👻.</p>
+
+</div>
+
+<br>
+
+<input id="password" placeholder="Inserisci la password">
+
+<br><br>
+
+<button onclick="controlla()">
+Entra 😻
+</button>
+
+<p id="errore"></p>
+
+</div>
+
+
+<script>
+
+function controlla(){
+
+let password = document.getElementById("password").value;
+
+if(password === "140326"){
+
+window.location.href = "home.html";
+
+} else {
+
+document.getElementById("errore").innerHTML =
+"Quasi... riprova ❤️";
+
+}
+
+}
+
+</script>
+
+</body>
+</html>
