@@ -3,23 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>il nistro posto segreto 🌹</title>
+    <title>il nostro posto segreto 🌹</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
     <header>
-        <h1>Benvenuti nel nostro angolo ❤️</h1>
+        <h1>Benvenuto amore nel nostro angolo dei ricordi</h1>
         <p>La nostra piccola storia, racchiusa in un posto speciale.</p>
     </header>
 
     <section class="about">
         <h2>Chi siamo</h2>
         <p>
-            Ciao! Siamo [tuo nome] e [nome del tuo ragazzo].
-            Questo sito raccoglie i nostri ricordi, i momenti più belli
-            e tutto quello che vogliamo condividere.
+            qui potrai rifuggiarti ogni volta che vuoi, guardando le nostre foto o scrivendo dei semplici pensieri
         </p>
     </section>
 
@@ -27,24 +25,135 @@
         <h2>La nostra storia ✨</h2>
 
         <div class="card">
-            <h3>📅 Il nostro inizio</h3>
-            <p>Scrivi qui quando vi siete conosciuti o il vostro primo momento speciale.</p>
+            <h3>🫶🏼Il nostro inizio🫶🏼</h3>
+            <p>non mi potró mai dimenticare il momento in cui varcasti quella porta, il giorno giusto nel momento giusto.</p>
         </div>
 
         <div class="card">
-            <h3>❤️ Un ricordo speciale</h3>
-            <p>Aggiungi un momento che non dimenticherete mai.</p>
+            <h3>😻 Un ricordo speciale</h3>
+            <p>fino ad oggi, non potrei mai dimenticare tutti i tuoi piccoli baci in fronte. essi mi regalano sempre grandi emozioni facendomi sentire protetta e amata. durante quei piccoli istanti ritorna la piccola me.</p>
         </div>
 
         <div class="card">
             <h3>🌎 I nostri sogni</h3>
-            <p>Raccontate cosa vi piacerebbe vivere insieme.</p>
+            <p>lista delle cose da fare con melocachi:
+                1. andare in montagna
+                2. fare un viaggio
+                3. e beh tante altre cose ovvio (sono troppo prigra e sono le 4 per scriverle tutte).</p>
         </div>
+
+<section class="pensieri">
+
+<h2>💌 Il nostro angolino dei pensieri</h2>
+
+<p>
+Lascia qui un pensiero per me ogni volta che vuoi ❤️
+</p>
+
+<textarea id="nuovoPensiero" placeholder="Scrivi qualcosa..."></textarea>
+
+<br>
+
+<button onclick="salvaPensieroHome()">
+Aggiungi pensiero 💗
+</button>
+
+
+<div id="listaPensieri"></div>
+
+</section>
+        
     </section>
 
     <footer>
         <p>Creato con amore ❤️</p>
     </footer>
 
+<script>
+
+function salvaPensieroHome(){
+
+let testo = document.getElementById("nuovoPensiero").value;
+
+
+if(testo != ""){
+
+
+let pensieri = JSON.parse(localStorage.getItem("pensieri")) || [];
+
+
+pensieri.push(testo);
+
+
+localStorage.setItem("pensieri", JSON.stringify(pensieri));
+
+
+mostraPensieri();
+
+
+document.getElementById("nuovoPensiero").value = "";
+
+
+}
+
+else {
+
+alert("Scrivi prima un pensiero ❤️");
+
+}
+
+
+}
+
+
+
+
+function mostraPensieri(){
+
+
+let contenitore = document.getElementById("listaPensieri");
+
+
+contenitore.innerHTML = "";
+
+
+let pensieri = JSON.parse(localStorage.getItem("pensieri")) || [];
+
+
+
+pensieri.forEach(function(pensiero){
+
+
+let nuovo = document.createElement("p");
+
+
+nuovo.innerHTML = "💌 " + pensiero + " ❤️";
+
+
+contenitore.appendChild(nuovo);
+
+
+});
+
+
+}
+
+
+
+
+window.onload = mostraPensieri;
+
+
+
+else {
+
+alert("Scrivi prima un pensiero ❤️");
+
+}
+
+}
+
+</script>
+    
 </body>
 </html>
